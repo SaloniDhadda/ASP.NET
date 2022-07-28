@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model employee
+<h3>Do you Want to delete this record?</h3>
+
+<div>
+    Employee ID:@Model.Id<br/>
+    Employee Name:@Model.Name<br/>
+    Employee Job:@Model.job<br/>
+    Employee Salary:@Model.sal<br/>
+    Employee Department Number:@Model.deptid<br/>
+</div>
+
+<form action="/Employee/delete" method="post">
+<input name="id" type="hidden" value="@Model.Id" />
+<input type="submit" value="Delete" />
+
+</form>
+<hr/>
+<a href="/Employee/Index">Back to List</a>
